@@ -14,12 +14,6 @@
         <h2>Search criteria</h2>
         <label for="search">Search input: </label>
         <input type="search" placeholder="Search" id="search" name="q">
-        <input type="radio" id="small" name="imgSize" value="small" checked="true">
-        <label for="medium">Small</label>
-        <input type="radio" id="medium" name="imgSize" value="medium">
-        <label for="medium">Medium</label>
-        <input type="radio" id="large" name="imgSize" value="large">
-        <label for="large">Large</label>
         <label for="sort">Sort by: </label>
         <select name="sort" id="sort">
             <option value="relevance">Relevance</option>
@@ -29,7 +23,13 @@
             <option value="interestingness-asc">Interestingness ascending</option>
         </select>
         <label for="amount">Amount of results: </label>
-        <input type="number" id="amount" value="20">
+        <input type="number" id="amount" value="20" max="500" min="1">
+        <input type="radio" id="small" name="imgSize" value="small" checked="true">
+        <label for="medium">Small</label>
+        <input type="radio" id="medium" name="imgSize" value="medium">
+        <label for="medium">Medium</label>
+        <input type="radio" id="large" name="imgSize" value="large">
+        <label for="large">Large</label>
         <button type="submit">Submit</button>
     </form>
     <section id="photoSection">

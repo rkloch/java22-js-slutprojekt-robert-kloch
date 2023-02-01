@@ -5,7 +5,9 @@ document.querySelector('button').addEventListener("click", applyUserFormInput);
 function applyUserFormInput(event){
     event.preventDefault();
     URL = defaultURL;
+    //Empty photo container when user makes a search request
     document.getElementById("photoSection").innerHTML = "";
+    //constructing URL for FlickrAPI
     if(document.getElementById("search").value != ""){
         URL += "&text="+encodeURIComponent(document.getElementById('search').value);
         URL += "&sort=" + document.getElementById("sort").value;
@@ -28,7 +30,6 @@ function fetchFlickrJson(){
 }
 
 function addImgToPhotoSection(flickrJson){
-    console.log(flickrJson);
     if(flickrJson.photos.photo.length === 0){
         document.getElementById("photoSection").innerHTML= "<h3>No results, please change search parameters</h3>";
     }else{
@@ -42,7 +43,7 @@ function addImgToPhotoSection(flickrJson){
         document.getElementById("photoSection").appendChild(aElement);
     })}
 }
-
+//Function that adds correct suffix for size option in URL
 function userSizeChoiceToURL(){
     let sizeChoice = document.querySelector('input[type=radio]:checked').value;
     if (sizeChoice === "small") return "w";
